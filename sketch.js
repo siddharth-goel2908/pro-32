@@ -88,7 +88,7 @@ function setup() {
 
 function draw() {
   if(backgroundImage){ 
-  background(backgroundImage);
+  background(bg);
   }
   textSize(35);
   //fill(100,168,21);
@@ -103,7 +103,7 @@ console.log(scoregame)
   fill("blue")
   textSize(20)
   text("Drag the Hexagonal and realease it towards the Blocks ",200,40)
-
+  async_getTime();
   drawSprites();
 
   
@@ -203,7 +203,7 @@ function mouseDragged(){
     }
   }
 
-  async function getTime() {
+  async_getTime function () {
   
     var getinfo= await   fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata")
     var infotype = await getinfo.json();
