@@ -22,6 +22,7 @@ var backgroundImage;
 var scoregame = 0;
 
 function preload() {
+  backgroundImage=loadImage("nightsky.jpg");
   getTime()
 }
 
