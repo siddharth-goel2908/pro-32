@@ -103,7 +103,8 @@ console.log(scoregame)
   fill("blue")
   textSize(20)
   text("Drag the Hexagonal and realease it towards the Blocks ",200,40)
-  async_getTime();
+
+  
   drawSprites();
 
   
