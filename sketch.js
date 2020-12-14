@@ -23,7 +23,7 @@ var scoregame = 0;
 
 function preload() {
   backgroundImage=loadImage("nightsky.jpg");
-  getTime();
+  getTime()
 }
 
 
@@ -103,8 +103,6 @@ console.log(scoregame)
   fill("blue")
   textSize(20)
   text("Drag the Hexagonal and realease it towards the Blocks ",200,40)
-
-  
   drawSprites();
 
   
@@ -204,6 +202,24 @@ function mouseDragged(){
     }
   }
 
+  async function getTime() {
+  
+    var getinfo= await   fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata")
+    var infotype = await getinfo.json();
+    console.log(infotype)
+      
+    var time = infotype.datetime;
+    console.log(time);
+
+    var hr = time.slice(11,13);
+    console.log(hr);
+
+    if(hr >= 6 && hr <=18) {
+        bg = "sky for game.jpg";
+    } else {
+        bg = "nightsky...jpg";
+
+    }
 
     backgroundImage = loadImage(bg);
     console.log(backgroundImage)
